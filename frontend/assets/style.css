@@ -1,0 +1,90 @@
+@font-face{
+    src: url(../assets/Arimo-VariableFont_wght.ttf);
+    font-family: Arimo;
+}
+
+html{
+    scrollbar-gutter: stable;
+    font-family: "Arimo", sans-serif;
+    background-color: #60adc4;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.connection_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 20px;
+    border-color:#9cd7ff;
+    padding: 50px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+h1{
+    padding: 50px;
+}
+
+div.input_box{
+    border-bottom: solid;
+    border-color:#9cd7ff;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+div.input_fields{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 7px;
+    width: 200px;
+    height: 65px;
+}
+div.input_fields input{
+    font-size: large;
+    width: 185px;
+    height: 65px;
+    border: 2px solid #9cd7ff;
+    border-radius: 20px;
+    padding-left:10px;
+}
+
+div.input_fields input:focus{
+    outline: none;
+    border-color:#60adc4;
+}
+
+div.buttons{
+    display: flex;
+    gap: 30px;
+}
+
+div.buttons button{
+    height: 50px;
+    width: 140px;
+    font-size: large;
+    border-radius: 30px;
+    border: solid;
+    border-color:#9cd7ff;
+}
+
+div.buttons button:hover{
+    cursor: pointer;
+    border-color:#60adc4;
+}
+
+
+
+body .response{
+    min-height: 30px;
+    display: flex;
+    font-size: 15px;
+    color: red;
+}
