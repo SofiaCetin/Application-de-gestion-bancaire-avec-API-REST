@@ -25,7 +25,7 @@ class Database:
             last TEXT,
             pass TEXT,
             token TEXT,
-            wallet NUMERIC(12, 2)
+            balance NUMERIC(12, 2)
             )     
         """)
 
@@ -43,13 +43,15 @@ class Database:
             VALUES (%s, %s, %s, %s, %s)
             ON CONFLICT (id) DO NOTHING
             RETURNING id
-            """, (id, first, last, password, wallet))
+            """, (id, first, last, password, balance))
         res = cur.fetchone()
         conn.commit()
         cur.close()
         conn.close()
-    
-        return res
+        if res:
+            return res[0]
+        else:
+            return None
     
     def get_user(self, id : str):
         
@@ -65,8 +67,10 @@ class Database:
         res = cur.fetchone()
         cur.close()
         conn.close()
-        
-        return res
+        if res:
+            return res[0]
+        else:
+            return None
         
     
     def get_pass(self, id : str):
@@ -83,7 +87,10 @@ class Database:
         res = cur.fetchone()
         cur.close()
         conn.close()
-        return res
+        if res:
+            return res[0]
+        else:
+            return None
     
     def get_balance(self, id : str):
     
@@ -99,7 +106,10 @@ class Database:
         res = cur.fetchone()
         cur.close()
         conn.close()
-        return res
+        if res:
+            return res[0]
+        else:
+            return None
     
     def set_token(self, id : str, token : str):
     
