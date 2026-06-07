@@ -1,3 +1,5 @@
+/* Code commun à toutes les pages */
+
 @font-face{
     src: url(../assets/Arimo-VariableFont_wght.ttf);
     font-family: Arimo;
@@ -6,9 +8,15 @@
 html{
     scrollbar-gutter: stable;
     font-family: "Arimo", sans-serif;
+}
+
+/* Page de connection */
+
+.index{
     background-color: #60adc4;
 }
-body{
+
+.index body{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -26,11 +34,7 @@ div.connection_box {
     background-color: rgb(255, 255, 255);
 }
 
-h1{
-    padding: 50px;
-}
-
-div.input_box{
+.index div.input_box{
     border-bottom: solid;
     border-color:#9cd7ff;
     padding-bottom: 20px;
@@ -39,7 +43,7 @@ div.input_box{
     gap: 20px;
 }
 
-div.input_fields{
+.index div.input_fields{
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -47,7 +51,8 @@ div.input_fields{
     width: 200px;
     height: 65px;
 }
-div.input_fields input{
+
+.index div.input_fields input{
     font-size: large;
     width: 185px;
     height: 65px;
@@ -56,35 +61,80 @@ div.input_fields input{
     padding-left:10px;
 }
 
-div.input_fields input:focus{
+.index div.input_fields input:focus{
     outline: none;
     border-color:#60adc4;
 }
 
-div.buttons{
+.index div.buttons{
     display: flex;
     gap: 30px;
 }
 
-div.buttons button{
+.index div.buttons button{
     height: 50px;
     width: 140px;
     font-size: large;
     border-radius: 30px;
     border: solid;
     border-color:#9cd7ff;
+    background-color: white;
 }
 
-div.buttons button:hover{
+.index div.buttons button:hover{
     cursor: pointer;
     border-color:#60adc4;
 }
 
-
-
-body .response{
+.index body .response{
     min-height: 30px;
     display: flex;
     font-size: 15px;
     color: red;
+}
+
+/* Page d'accueil */
+
+.top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    padding: 100px;
+}
+
+.connection_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul{
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    cursor: default;
+    background-color: #60adc4;
+    height: 45px;
+    gap: 20px;
+}
+
+.menu ul li{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.menu ul li:hover{
+    border-bottom: solid;
+    border-width: 2.5px;
+    cursor: pointer;
 }

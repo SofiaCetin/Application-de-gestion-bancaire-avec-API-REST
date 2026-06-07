@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Depends, Cookie, Response
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from database.db import Database
 from dotenv import load_dotenv
@@ -33,6 +34,16 @@ class LoginResponse(BaseModel):
     token : str
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 database = Database(DATABASE_URL)
 database.init()
 
@@ -98,7 +109,7 @@ def get_current_user(access_token : str | None = Cookie(default=None)):
     if not access_token:
         raise HTTPException(
             status_code=401,
-            detail="Missing token"
+            error="Missing token"
         )
 
     try:
