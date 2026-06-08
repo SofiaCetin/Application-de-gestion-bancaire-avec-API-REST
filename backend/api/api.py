@@ -107,10 +107,7 @@ def create_access_token(user_id : str) -> str:
 def get_current_user(access_token : str | None = Cookie(default=None)):
     
     if not access_token:
-        raise HTTPException(
-            status_code=401,
-            error="Missing token"
-        )
+        raise HTTPException(status_code=401, detail="Missing token")
 
     try:
         token = jwt.decode(
@@ -138,6 +135,17 @@ def check_user(user_id : str) -> bool:
         return False
     else:
         return True
+    
+@app.get("/api/user-info")
+def user_info(user_id : str = Depends(get_current_user)):
+    first = database.get_first(user_id);
+    last = database.get_last(user_id);
+    return {
+        "user_id" : user_id,
+        "first" : first,
+        "last" : last
+    }
+    
 
 @app.get("/api/logged-user")
 def logged_user(user_id : str = Depends(get_current_user)):

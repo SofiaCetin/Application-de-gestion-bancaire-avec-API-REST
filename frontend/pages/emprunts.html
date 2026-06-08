@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="loan">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <img class="logo" src="../assets/logo.png" width="130" height="130">
+    <div class="connection_info">
+        <p id="user_names">Prénom NOM</p>
+        <p class="user_id" id="user_id"></p>
+    </div>
+    <nav class="menu">
+        <ul>
+            <li>Solde</li>
+            <li class="current">Emprunts</li>
+            <li>Bénéficiaires</li>
+            <li>Virements</li>
+        </ul>
+    </nav>
+    <div class="page_box">
+        <p class="title">Effectuer un prêt bancaire</p>
+        <p>Vous souhaitez effectuer un prêt auprès de votre banque ? Entrez le montant
+            désiré ci-dessous. Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de 
+            remboursement avant de procéder.
+        </p>
+        <div class="money_box">
+            <label for="id_field">Je souhaite effectuer un prêt à hauteur de </label><input type="text" id="id_field" name="id_field">
+            <p>€</p>
+            <label for="checkbox">Je m'engage à rembourser ce crédit dans l'intégralité</label><input type="checkbox" id="checkbox" name="checkbox">
+        </div>
+        <div class="buttons">
+            <button id="proceed">Valider</button>
+        </div>
+    </div>
+</body>
+</html>

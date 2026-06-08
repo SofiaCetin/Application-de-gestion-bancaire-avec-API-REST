@@ -52,6 +52,44 @@ class Database:
             return res[0]
         else:
             return None
+        
+    def get_first(self, id : str):
+        
+        conn = self.connect()
+        cur = conn.cursor()
+        
+        cur.execute("""
+            SELECT first
+            FROM accounts
+            WHERE id = %s
+            """, (id,))
+        
+        res = cur.fetchone()
+        cur.close()
+        conn.close()
+        if res:
+            return res[0]
+        else:
+            return None
+    
+    def get_last(self, id : str):
+        
+        conn = self.connect()
+        cur = conn.cursor()
+        
+        cur.execute("""
+            SELECT last
+            FROM accounts
+            WHERE id = %s
+            """, (id,))
+        
+        res = cur.fetchone()
+        cur.close()
+        conn.close()
+        if res:
+            return res[0]
+        else:
+            return None
     
     def get_user(self, id : str):
         
@@ -110,21 +148,6 @@ class Database:
             return res[0]
         else:
             return None
-    
-    def set_token(self, id : str, token : str):
-    
-        conn = self.connect()
-        cur = conn.cursor()
-        
-        cur.execute("""
-            UPDATE accounts
-            SET token = %s
-            WHERE id = %s
-            """, (token, id))
-        
-        conn.commit()
-        cur.close()
-        conn.close()
     
     def set_pass(self, id : str, password : str):
         

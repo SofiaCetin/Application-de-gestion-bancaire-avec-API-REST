@@ -12,17 +12,17 @@ html{
 
 /* Page de connection */
 
-.index{
+.login{
     background-color: #60adc4;
 }
 
-.index body{
+.login body{
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 
-div.connection_box {
+.login div.connection_box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,7 @@ div.connection_box {
     background-color: rgb(255, 255, 255);
 }
 
-.index div.input_box{
+.login div.input_box{
     border-bottom: solid;
     border-color:#9cd7ff;
     padding-bottom: 20px;
@@ -43,7 +43,7 @@ div.connection_box {
     gap: 20px;
 }
 
-.index div.input_fields{
+.login div.input_fields{
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -52,7 +52,7 @@ div.connection_box {
     height: 65px;
 }
 
-.index div.input_fields input{
+.login div.input_fields input{
     font-size: large;
     width: 185px;
     height: 65px;
@@ -61,17 +61,17 @@ div.connection_box {
     padding-left:10px;
 }
 
-.index div.input_fields input:focus{
+.login div.input_fields input:focus{
     outline: none;
     border-color:#60adc4;
 }
 
-.index div.buttons{
+div.buttons{
     display: flex;
     gap: 30px;
 }
 
-.index div.buttons button{
+div.buttons button{
     height: 50px;
     width: 140px;
     font-size: large;
@@ -81,12 +81,12 @@ div.connection_box {
     background-color: white;
 }
 
-.index div.buttons button:hover{
+div.buttons button:hover{
     cursor: pointer;
     border-color:#60adc4;
 }
 
-.index body .response{
+.login body .response{
     min-height: 30px;
     display: flex;
     font-size: 15px;
@@ -95,40 +95,71 @@ div.connection_box {
 
 /* Page d'accueil */
 
-.top{
+body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    height: max-content;
     align-items: center;
-    justify-content: right;
-    padding: 100px;
+    gap: 15px;
+    padding-left: 400px;
+    padding-right: 400px;
+    font-size: large;
 }
 
 .connection_info{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.connection_info p{
+    margin: 0;
+    padding: 0;
+}
+
+.user_id{
+    font-style: italic;
+    font-size: smaller;
+}
+
+.logo{
+    justify-content: right;
+    border-style: solid;
+    border-width: 4px; 
+    border-radius: 300px;
+    border-color:#9cd7ff;
 }
 
 .menu{
     display: flex;
-    align-items: center;
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 .menu ul{
-    align-items: center;
     color: white;
     display: flex;
     flex-direction: row;
     list-style-type: none;
     cursor: default;
+    border: solid;
+    border-radius: 25px;
+    border-width: 4px;
+    border-color:#9cd7ff;
     background-color: #60adc4;
     height: 45px;
+    width: fit-content;
     gap: 20px;
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .menu ul li{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-top: 12px;
     padding-bottom: 12px;
 }
@@ -136,5 +167,61 @@ div.connection_box {
 .menu ul li:hover{
     border-bottom: solid;
     border-width: 2.5px;
+    color:#9cd7ff;
     cursor: pointer;
+}
+
+.current{
+    border-bottom: solid;
+    border-width: 2.5px;
+    color:#9cd7ff;
+    cursor: pointer;
+}
+
+.solde .balance_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.solde .balance{
+    font-size: xx-large;
+    border-top: solid;
+    padding: 50px;
+    width: auto;
+    margin: 0;
+    border-color:#9cd7ff;
+    border-radius: 50%;
+    border-width: 3px;
+}
+
+.solde .balance_text{
+    margin: 0;
+    padding-bottom: 80px;
+}
+
+.solde .title{
+    font-size: larger;
+}
+
+.solde .history_grid ul{
+    color: white;
+    list-style: none;
+    display: flex;
+    width: 700px;
+    padding: 0;
+    margin: 0;
+}
+
+.solde .history_grid li{
+    border: solid;
+    width: 300px;
+    padding: 10px;
+    border-color:#9cd7ff;
+    color: black;
+}
+
+.solde .history_grid .default li{
+    background-color: #60adc4;
+    color: white;
 }
